@@ -1,0 +1,227 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Jia Feng (Jayden) Yu} \\ \vspace{1pt}
+    \small 438-939-9688 $|$ \href{mailto:jf2yu@uwaterloo.ca}{\underline{jf2yu@uwaterloo.ca}} $|$ 
+    \href{https://github.com/JiaFengYu}{\underline{GitHub}}
+    $|$ 
+    \href{https://www.linkedin.com/in/jiafeng-yu/}{\underline{LinkedIn}}
+    $|$ 
+    \href{https://JiaFengYu.github.io}{\underline{Website}}
+\end{center}
+
+ %-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C/C++, Rust, Lisp (Racket-lang), Bash, Lua, JavaScript, HTML/CSS, KDB/SQL, Java, MIPS/ARM Assembly, R, } \\
+     \textbf{Frameworks/Tools}{: Arch Linux, Vim, Git, FreeBSD, NumPy, Pandas, PyTorch, TensorFlow, Compilers (LLVM), AWS, Jira, Node.js, Vue.js}
+    }}\\
+    \textbf{Interested in}{: OCaml, Automated Theorem Proving, Penetration Testing, Gentoo and BlackArch Linux, Go(lang)}
+    \textbf{Communication}{: English, French, Mandarin Chinese, Spanish}
+ \end{itemize}
+  
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {University of Waterloo}{Waterloo, ON}
+      {Undergraduate Research Assistant}{Jan 2023 - Ongoing}
+      \resumeItemListStart
+        \resumeItem{Researching FreeBSD kernel performance optimization using static and dynamic analysis }
+        \resumeItem{Researching conditional, coalescent instruction prefetching and continuous profiling}
+        \resumeItem{Decompiled binaries to minimize cache misses by automating code refactoring using Ghidra}
+        \resumeItem{Implemented the testing framework and performance tested HHVM, DaCapo, and Renaissance applications}
+        \resumeItem{Read, summarized, and presented various academic and industry systems research papers}
+      \resumeItemListEnd
+      
+  \resumeSubheading
+      {Ledn Inc}{Toronto, ON}
+      {Quantitative Developer Intern}{Sept 2022 - Dec 2022}
+      \resumeItemListStart
+        \resumeItem{ Researched, analyzed, and produced cryptocurrencies market microstructure reports from historical market data using KDB and SQL}
+        \resumeItem{ Designed and engineered a multi-threaded market data consolidator in Rust to decrease latency by over 50\% }
+        \resumeItem{ Actively participated in the design of a high frequency quantitative trading Minimum Viable Product, through researching various limit order models, efficient documentation, and code reviews }
+        \resumeItem{ Helped manage an AWS EC2 instance to source modeling data and host a KX Developer environment }
+        \resumeItem{ Researched and tested the implementation of a LSTM and Neural Network model for low latency decision making }
+        \resumeItemListEnd
+
+      \resumeSubheading
+      {Ford Motor Company}{Waterloo, ON}
+      {Software Engineer Intern}{Jan 2022 - April 2022}
+      \resumeItemListStart
+        \resumeItem{Implemented the Full Stack Development for a performance metrics website following Agile Development}
+        \resumeItem{Engineered JavaScript and Python scripts to create and modify JSON files for data processing}
+
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {SS\&C Technologies}{Toronto, ON}
+      {Full Stack Developer Intern} {May 2021 - Sept 2021}
+      \resumeItemListStart
+        \resumeItem{Participated in the development a Java based Selenium testing framework from scratch }
+        \resumeItem{Implemented frontend components of a revamped legacy product using Vue.js }
+      \resumeItemListEnd
+
+      \resumeItemListEnd
+
+
+
+      
+%\resumeSubHeadingListEnd
+  
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Waterloo, ON}
+      {Bachelor of Mathematics, Major in Honours Computer Science, Minor in Mathematics}{Sep 2020 -- May 2025E}
+      \resumeItemListStart
+      \resumeItem{\textbf{Relevant Coursework:} Artificial Intelligence, Machine Learning, Operating Systems, Algorithms, Data Structures, Compilers, Theory of Computing, Object Oriented Programming,  Computer Architecture and Design, Numerical Computation, Abstract Algebra, and Real Analysis}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+
+\section{Community}
+    \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {University of Waterloo Computer Science Club}{Waterloo, ON}
+      {Systems Administrator} {March 2023 - Ongoing}
+      \resumeItemListStart
+        \resumeItem{Managed CS Club services and helped maintained uWaterloo's tier 1 Arch Linux mirrors}
+        \resumeItem{Helped allocate server space and host websites for other student clubs}
+      \resumeItemListEnd
+    
+    \resumeSubHeadingListEnd
+
+
+
+    
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+    \resumeProjectHeading
+          {\textbf{Immune System Invaders} $|$ \emph{JavaScript, HTML, CSS}}{March 2020}
+          \item
+          Created a web based implementation of the Space Invaders game with a COVID-19 twist in standard JavaScript, HTML, CSS with OOP principles and scalability in mind.
+      \href{https://jiafengyu.github.io/ISI/game.html}{\underline{Link to game}}
+    \resumeSubHeadingListEnd
+
+%
+\end{document}
