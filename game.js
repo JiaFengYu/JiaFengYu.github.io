@@ -5,6 +5,7 @@ let img_virus = document.getElementById("virus");
 let img_vaccine = document.getElementById("vaccine");
 let img_doctor = document.getElementById("doctor");
 let wallpaper = document.getElementById("wallpaper");
+let gameover = document.getElementById("gameover");
 let virus_dmg = document.getElementById("virus_dmg");
 cotx.drawImage(wallpaper,0,0);
 
@@ -80,6 +81,10 @@ function draw_all(iterable){
   }
 
 }
+
+function GameOver() {
+  cotx.drawImage(gameover,240,0);
+}
 //Updates the viruses position
 function update(iterable){
   for (let i = 0; i < iterable.length; i++) {
@@ -129,6 +134,16 @@ function update(iterable){
       virus.radius = 0
     }
   }
+  let all_dead = true;
+  for (let virus of viruses){
+      if (virus.hp != 0) {
+          all_dead = false;
+          break;
+      }
+  }
+    if (all_dead) {
+        GameOver()
+    }
 }
 
 
