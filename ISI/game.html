@@ -6,18 +6,34 @@
     <style>
     	* { padding: 0; margin: 0; }
     	canvas { background: #000000; display: block; margin: 0 auto; }
-      <link rel="stylesheet" href="styles.css">
     </style>
 </head>
 
 <style>
-p{
-    font-size: 24px;
-    font-family: Consolas;
-}
-
+        body {
+            background-color: #a4d792;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            height: 100vh;
+            /*padding: -10px 0; /* Adjust the top and bottom padding here */
+        }
+        p{
+            font-size: 24px;
+            font-family: Consolas;
+            margin: 50px;
+        }
+        h1 {
+            font-size: 72px;
+        }
+        canvas {
+            background: #000000;
+            display: block;
+            margin: 100px; /* Adjust this value to control the distance from all sides */
+        }
 </style>
-<body style="background-color:#a4d792;">
+
+<b><h1 align="center"> IMMUNE SYSTEMS INVADERS</h1></b>
 <canvas id="myCanvas" width="1280" height="720"></canvas>
 <div style = "display:none;">
  <img id ="virus"
@@ -45,6 +61,6 @@ p{
 </div>
 <script src="game.js"> </script>
 
-<b><p align = "center"> Use the Left and Right arrow key to displace the Doctor and Space to shoot! </p></b>
+<b><p > Use the Left and Right arrow key to displace the Doctor and Space to shoot! </p></b>
 
 </html>

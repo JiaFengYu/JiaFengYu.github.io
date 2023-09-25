@@ -86,7 +86,7 @@ function GameOver() {
   cotx.drawImage(gameover,240,0);
 }
 //Updates the viruses position
-function update(iterable){
+function update(iterable, game_score){
   for (let i = 0; i < iterable.length; i++) {
     iterable[i].x += dx
     if(rightPressed) {
@@ -126,6 +126,7 @@ function update(iterable){
         virus.hp -= 1;
         projectile = null;
         console.log("landed");
+          game_score++;
       }
     }
     if (virus.hp == 0){
@@ -178,9 +179,10 @@ function keyUpHandler(e) {
       spacePressed = false;
     }
 }
-function draw_everything(){
+function draw_everything(game_score){
   draw_all(viruses);
-  update(viruses);
+  update(viruses, game_score);
 }
-draw_everything();
-setInterval(draw_everything, 10)
+let score = 0;
+draw_everything(score);
+setInterval(draw_everything(score), 10)

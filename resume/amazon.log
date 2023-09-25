@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.30)  25 SEP 2023 11:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.20)  10 AUG 2023 14:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**jiafeng.tex
-(./jiafeng.tex
+**amazon.tex
+(./amazon.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -237,8 +237,8 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count275
 \l__pdf_internal_box=\box55
-) (./jiafeng.aux)
-\openout1 = `jiafeng.aux'.
+) (./amazon.aux)
+\openout1 = `amazon.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
 LaTeX Font Info:    ... okay on input line 107.
@@ -273,9 +273,9 @@ LaTeX Font Info:    ... okay on input line 107.
 \everyMPtoPDFconversion=\toks25
 )
 Package hyperref Info: Link coloring OFF on input line 107.
- (./jiafeng.out) (./jiafeng.out)
+ (./amazon.out) (./amazon.out)
 \@outlinefile=\write3
-\openout3 = `jiafeng.out'.
+\openout3 = `amazon.out'.
 
 
 
@@ -304,23 +304,23 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./jiafeng.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./amazon.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `jiafeng.out' has not changed.
+Package rerunfilecheck Info: File `amazon.out' has not changed.
 (rerunfilecheck)             Checksum: A90C7D5719DDB6885693933C18C16ECB;478.
  ) 
 Here is how much of TeX's memory you used:
  10335 strings out of 477985
- 163275 string characters out of 5840058
+ 163258 string characters out of 5840058
  1882388 words of memory out of 5000000
  30407 multiletter control sequences out of 15000+600000
  517879 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,11n,76p,361b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,76p,268b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on jiafeng.pdf (1 page, 105156 bytes).
+Output written on amazon.pdf (1 page, 105535 bytes).
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  58 compressed objects within 1 object stream

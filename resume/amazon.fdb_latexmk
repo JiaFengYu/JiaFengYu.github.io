@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1695655855 "jiafeng.tex" "jiafeng.pdf" "jiafeng" 1695655856 0
+["pdflatex"] 1691692255 "amazon.tex" "amazon.pdf" "amazon" 1691692256 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1689853683 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1689853683 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -82,14 +82,14 @@
   "/usr/share/texmf-dist/tex/latex/tools/verbatim.sty" 1689853683 7392 f19cdc68ae9f1190dbd54eee6d29fb7c ""
   "/usr/share/texmf-dist/tex/latex/url/url.sty" 1689853683 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693416670 4482925 a1a254cacf5c7108f7b28226c8f3b19f ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693416582 6768054 9b3050bd6eab0faccd6517cd1e1d135e ""
-  "jiafeng.aux" 1695655856 1171 8e1afb4e2edffd91161d0250c6996243 "pdflatex"
-  "jiafeng.out" 1695655856 478 a90c7d5719ddb6885693933c18c16ecb "pdflatex"
-  "jiafeng.tex" 1695655853 8366 601a1a9bab1bb621ea57b4bdf5661c85 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1689872963 4482925 a1a254cacf5c7108f7b28226c8f3b19f ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1689872906 6768055 fff81af35aa9b16a0cc567739b06e579 ""
+  "amazon.aux" 1691692256 1171 8e1afb4e2edffd91161d0250c6996243 "pdflatex"
+  "amazon.out" 1691692256 478 a90c7d5719ddb6885693933c18c16ecb "pdflatex"
+  "amazon.tex" 1691692255 8404 0a5a0859142f1b8693a466787fe71b36 ""
   (generated)
-  "jiafeng.aux"
-  "jiafeng.log"
-  "jiafeng.out"
-  "jiafeng.pdf"
+  "amazon.aux"
+  "amazon.log"
+  "amazon.out"
+  "amazon.pdf"
   (rewritten before read)
