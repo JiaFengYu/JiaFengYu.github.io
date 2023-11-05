@@ -64,6 +64,13 @@ function drawBullet(bullet) {
   // ctx.rect(bullet.x, bullet.y, 10, 20);
   cotx.drawImage(img_vaccine,bullet.x,bullet.y);
 }
+
+function drawScore() {
+  ctx.font = '40px Arial';
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillText('SCORE: ' + game_score, 8, 40);
+}
+
 // When projective == null, no projectile on board
 let projectile = null;
 
@@ -128,7 +135,7 @@ function update(iterable){
         virus.hp -= 1;
         projectile = null;
         console.log("landed");
-        game_score++;
+        game_score += 10;
         console.log(game_score);
       }
     }
@@ -182,10 +189,59 @@ function keyUpHandler(e) {
       spacePressed = false;
     }
 }
+// 
+// // Define button properties
+// const button = {
+//   x: 100,
+//   y: 100,
+//   width: 200,
+//   height: 50,
+//   text: 'Click Me!'
+// };
+// 
+// // Draw button on canvas
+// function drawButton() {
+//   ctx.fillStyle = '#0000FF'; // Button color
+//   ctx.fillRect(button.x, button.y, button.width, button.height); // Draw button
+//   ctx.fillStyle = '#FFFFFF'; // Text color
+//   ctx.font = '20px Arial';
+//   // Calculate text position to center it in the button
+//   const textSize = ctx.measureText(button.text);
+//   const textX = button.x + (button.width - textSize.width) / 2;
+//   const textY = button.y + (button.height / 2) + (textSize.actualBoundingBoxAscent / 2);
+//   ctx.fillText(button.text, textX, textY); // Draw button text
+// }
+// 
+// // Check if the click is within the button area
+// function isClickInsideButton(clickX, clickY) {
+//   return clickX > button.x && clickX < button.x + button.width &&
+//          clickY > button.y && clickY < button.y + button.height;
+// }
+// 
+// // Event listener for click events on the canvas
+// canvas.addEventListener('click', function(event) {
+//   // Get the click position relative to the canvas top-left corner
+//   const rect = canvas.getBoundingClientRect();
+//   const clickX = event.clientX - rect.left;
+//   const clickY = event.clientY - rect.top;
+// 
+//   // Check if the click was inside the button
+//   if (isClickInsideButton(clickX, clickY)) {
+//     // Perform the button's action
+//     console.log('Button clicked!');
+//     // You can call any function here that you want to execute when the button is clicked
+//   }
+// });
+// 
+// // Call drawButton function to draw the button on the canvas
+// drawButton();
+
 function draw_everything(){
   draw_all(viruses);
+  drawScore(); // Add this line to draw the score
   update(viruses);
 }
+
 let game_score = 0
 draw_everything();
 setInterval(draw_everything, 10)
