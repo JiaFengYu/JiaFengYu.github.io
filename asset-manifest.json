@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/jiafengyu.github.io/personal_website/static/css/main.d5cf52c3.css",
+    "main.js": "/jiafengyu.github.io/personal_website/static/js/main.bddc6469.js",
+    "static/js/453.96291c79.chunk.js": "/jiafengyu.github.io/personal_website/static/js/453.96291c79.chunk.js",
+    "static/media/jiafeng.pdf": "/jiafengyu.github.io/personal_website/static/media/jiafeng.7ba8cef6cd95244e717e.pdf",
+    "index.html": "/jiafengyu.github.io/personal_website/index.html",
+    "main.d5cf52c3.css.map": "/jiafengyu.github.io/personal_website/static/css/main.d5cf52c3.css.map",
+    "main.bddc6469.js.map": "/jiafengyu.github.io/personal_website/static/js/main.bddc6469.js.map",
+    "453.96291c79.chunk.js.map": "/jiafengyu.github.io/personal_website/static/js/453.96291c79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d5cf52c3.css",
+    "static/js/main.bddc6469.js"
+  ]
+}
