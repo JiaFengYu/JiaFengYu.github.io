@@ -32,14 +32,15 @@ const INFO = {
 
 	projects: [
 		{
-			title: "Project 1",
+			title: "Immune System Invaders",
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
+				"A twist on Space Invaders to turn it into an educational game related to the COVID-19 virus. Source code is available on my GitHub.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
+			linkText: "Play the game!",
+			link: "/ISI/game.html",
 		},
 
+        {/*
 		{
 			title: "Project 2",
 			description:
@@ -75,6 +76,7 @@ const INFO = {
 			linkText: "View Project",
 			link: "https://github.com",
 		},
+        */}
 	],
 };
 

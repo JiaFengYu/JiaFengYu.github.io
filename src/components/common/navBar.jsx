@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./styles/navBar.css";
-import "./jiafeng.pdf";
 
 const NavBar = (props) => {
 	const { active } = props;
@@ -40,7 +39,7 @@ const NavBar = (props) => {
 							>
 								<Link to="/jiafeng.pdf">Resume</Link>
 							</li>
-        {/*
+        
 							<li
 								className={
 									active === "projects"
@@ -50,6 +49,7 @@ const NavBar = (props) => {
 							>
 								<Link to="/projects">Projects</Link>
 							</li>
+                            {/*
 							<li
 								className={
 									active === "articles"

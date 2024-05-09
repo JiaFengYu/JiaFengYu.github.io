@@ -28,14 +28,12 @@ const Notfound = () => {
 					<div className="notfound-container">
 						<div className="notfound-message">
 							<div className="notfound-title">
-								Oops! <FontAwesomeIcon icon={faFaceSadTear} />
+								Oops! 
 							</div>
 							<div className="not-found-message">
-								We can't seem to find the page you're looking
-								for.
-								<br />
-								The requested URL "{window.location.href}" was
-								not found on this server.
+                                Please refresh the page.
+                                <br></br>
+                                React most likely didn't load the page properly due to SPA routing.
 							</div>
 							<a href="/" className="not-found-link">
 								Go back to the home page

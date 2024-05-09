@@ -18,10 +18,10 @@ const Footer = () => {
 						<li className="footer-nav-link-item">
 							<Link to="/jiafeng.pdf">Resume</Link>
 						</li>
-        {/*
 						<li className="footer-nav-link-item">
-							<Link to="/articles">Articles</Link>
+							<Link to="/projects">Projects</Link>
 						</li>
+        {/*
 						<li className="footer-nav-link-item">
 							<Link to="/contact">Contact</Link>
 						</li>
