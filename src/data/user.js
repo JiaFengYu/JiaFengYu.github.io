@@ -34,8 +34,7 @@ const INFO = {
 		{
 			title: "Immune System Invaders",
 			description:
-				"A twist on Space Invaders to turn it into an educational game related to the COVID-19 virus. This was 
-                create right before the virus hit Canada. Source code is available on my GitHub.",
+				"A twist on Space Invaders to turn it into an educational game related to the COVID-19 virus. This was created right before the virus hit Canada. Source code is available on my GitHub.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "Play the game!",
 			link: "/ISI/game.html",
