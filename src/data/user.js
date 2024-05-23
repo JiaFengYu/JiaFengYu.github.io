@@ -1,3 +1,4 @@
+
 const INFO = {
 	main: {
 		title: "jiafengyu.github.io/",
@@ -21,7 +22,7 @@ const INFO = {
 	about: {
 		title: "Just a kid from Montréal 🇨🇦",
 		description:
-			"🇨🇦🇫🇷🇪🇸🇨🇳",
+			"🇨🇦🇫🇷🇪🇸🇨🇳 \n Will fill this up later with some more info about me: hobbies, fun facts, aspirations etc.",
 	},
 
 	articles: {
@@ -32,33 +33,32 @@ const INFO = {
 
 	projects: [
 		{
+			title: "RustOS",
+			description:
+				"Building a Rust only fully fledged OS kernel!",
+			logo: "/rust.png",
+			linkText: "View Project",
+			link: "https://github.com/JiaFengYu/rust_os",
+		},
+		{
+			title: "LinuxFromScratch",
+			description:
+				"Implementing my very own Linux distribution :)",
+			logo: "/linux.png",
+			linkText: "View Project",
+			link: "https://github.com/JiaFengYu",
+		},
+		{
 			title: "Immune System Invaders",
 			description:
 				"A twist on Space Invaders to turn it into an educational game related to the COVID-19 virus. This was created right before the virus hit Canada. Source code is available on my GitHub.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+			logo: "/javascript.png",
 			linkText: "Play the game!",
 			link: "/ISI/game.html",
 		},
 
-        {/*
-		{
-			title: "Project 2",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
 
-		{
-			title: "Project 3",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-
+        /*
 		{
 			title: "Project 4",
 			description:
@@ -76,7 +76,7 @@ const INFO = {
 			linkText: "View Project",
 			link: "https://github.com",
 		},
-        */}
+        */
 	],
 };
 
