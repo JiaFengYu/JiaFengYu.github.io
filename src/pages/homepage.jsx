@@ -137,7 +137,7 @@ const Homepage = () => {
 								/>
 							</a>
 							<a
-								href={`https://jiafengyu.github.io/jiafeng.pdf`}
+								href={`https://jiafengyu.github.io/files/jiafeng.pdf`}
 								target="_blank"
 								rel="noreferrer"
 							>

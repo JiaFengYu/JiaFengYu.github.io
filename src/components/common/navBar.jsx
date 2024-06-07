@@ -37,7 +37,7 @@ const NavBar = (props) => {
 										: "nav-item"
 								}
 							>
-								<Link to="/jiafeng.pdf">Resume</Link>
+								<Link to="https://jiafengyu.github.io/files/jiafeng.pdf">Resume</Link>
 							</li>
         
 							<li
