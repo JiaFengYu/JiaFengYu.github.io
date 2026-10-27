@@ -7,7 +7,8 @@ export interface Project {
   featured?: boolean;
   pullRequest?: { number: number; url: string };
   details: { title: string; text: string }[];
-  links: { label: string; href: string }[];
+  preview?: { src: string; alt: string; caption: string; width: number; height: number };
+  links: { label: string; href: string; download?: boolean }[];
 }
 
 export const projects: Project[] = [
@@ -43,20 +44,39 @@ export const projects: Project[] = [
   },
   {
     slug: "mersenne-cluster",
-    title: "Mersenne Primes Sidecar",
-    summary: "A Rust sidecar for tracking mprime progress, connecting my interests in systems programming and pure mathematics.",
-    category: "Personal project · Mathematics",
-    tags: ["Rust", "GIMPS"],
-    details: [{ title: "Following the search", text: "The Great Internet Mersenne Prime Search brings volunteers together to test candidates for enormous prime numbers. This sidecar project tracks mprime progress across that work. My GIMPS username is jiafengyu." }],
-    links: [{ label: "Why I contribute to GIMPS", href: "/gimps" }],
+    title: "GIMPS Watch",
+    summary: "A Rust observer that follows worker output, saves events and checkpoints atomically in SQLite, and exposes the last observed state through a CLI and local dashboard.",
+    category: "Personal project · Fixture-tested MVP",
+    tags: ["Rust", "SQLite", "GIMPS"],
+    preview: { src: "/images/gimps-watch-dashboard.png", alt: "GIMPS Watch showing two synthetic workers, source health, and raw record provenance", caption: "The runnable fixture demo: two synthetic workers with progress, completion, and error observations. Live mprime compatibility still needs validation against my home-machine logs.", width: 1280, height: 1884 },
+    details: [
+      { title: "What it does", text: "GIMPS Watch reads a documented subset of Prime95-style worker logs and JSON results without changing the underlying installation. Replay, watch, status, events, and serve commands share one SQLite event store. The dashboard shows the last observed assignment and progress, source health, errors, and the raw evidence behind each observation." },
+      { title: "Reliable observation", text: "Events, worker state, and file checkpoints commit together. The reader handles partial lines, restart, file rotation, and truncation. Explicit assignment IDs support result deduplication; exponent-only matches remain labeled ambiguous. Quiet output does not automatically mean a stalled worker, and local counts are not account-wide GIMPS totals." },
+      { title: "Tested scope", text: "Eleven integration tests cover parsing, transaction rollback, restart, rotation, deduplication, and API behavior. Desktop and mobile dashboard checks pass. A two-worker synthetic workload used 8.49 MiB RSS and 0.30% of one CPU core while idle, with appended records visible within 205 ms at a 200 ms polling interval. Compatibility with real home-machine logs remains the next validation step." },
+    ],
+    links: [
+      { label: "View source on GitHub", href: "https://github.com/JiaFengYu/gimps-watch" },
+      { label: "Download source and setup guide", href: "/downloads/gimps-watch-source.zip", download: true },
+      { label: "Download validation report", href: "/downloads/gimps-watch-validation.md", download: true },
+      { label: "Why I contribute to GIMPS", href: "/gimps" },
+    ],
   },
   {
     slug: "orbit-simulator",
-    title: "NASA Satellite Orbit Simulator",
-    summary: "A Rust project exploring orbital data and satellite trajectory simulation.",
-    category: "Personal project · Space",
-    tags: ["Rust", "Simulation"],
-    details: [{ title: "A systems project with a view of space", text: "This project explores fetching NASA orbital data and simulating satellite trajectories with a Rust backend. It combines an interest in space with hands-on systems programming." }],
-    links: [],
+    title: "Satellite Orbit Explorer",
+    summary: "A Rust SGP4 service with an offline interactive map, reproducible ground tracks, explicit orbital-element provenance, and a cached CelesTrak adapter.",
+    category: "Personal project · Tested MVP",
+    tags: ["Rust", "SGP4", "Orbital mechanics"],
+    preview: { src: "/images/orbit-track-explorer.png", alt: "Satellite Orbit Explorer showing a predicted ISS ground track and selected position on a world map", caption: "A historical ISS fixture propagated from its July 2020 element epoch. The map displays predictions and their source data, not live satellite telemetry.", width: 1280, height: 1652 },
+    details: [
+      { title: "From elements to a ground track", text: "The CLI and local API validate TLE input, propagate it with SGP4, convert TEME positions to WGS84 geodetic coordinates, and export JSON or GeoJSON. An offline browser map supports satellite selection, UTC time controls, a sampled-position slider, source metadata, and element-age warnings. Tracks split at the date line." },
+      { title: "Numerical checks", text: "The implementation pins SGP4 2.4.0 with WGS72 gravity constants and AFSPC compatibility mode. Tests compare 668 reference states and expected failures from the Vallado verification dataset, then check coordinate conversion independently. Ten integration tests cover numerical conventions, malformed input, request limits, provenance, provider-cache failures, and API behavior; desktop and mobile browser checks also pass." },
+      { title: "Measured scope and limits", text: "A warm 181-sample track averaged 0.46 ms over local HTTP on an AMD EPYC 9654 development host, excluding provider downloads. Earth orientation uses an approximate GMST rotation, so this is an exploration tool rather than a navigation service. The provider adapter is tested against a local HTTP server; live CelesTrak access was unavailable during implementation." },
+    ],
+    links: [
+      { label: "View source on GitHub", href: "https://github.com/JiaFengYu/orbit-track" },
+      { label: "Download source and setup guide", href: "/downloads/orbit-track-source.zip", download: true },
+      { label: "Download validation report", href: "/downloads/orbit-track-validation.md", download: true },
+    ],
   },
 ];

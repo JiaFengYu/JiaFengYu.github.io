@@ -20,7 +20,7 @@ export default function HomePage() {
             <Link href="/projects" className="action-primary">Explore my work <ArrowUpRight size={17} aria-hidden="true" /></Link>
             <Link href="/blog" className="action-secondary">Technical writing <BookOpen size={17} aria-hidden="true" /></Link>
           </div>
-          <p className="mt-6 text-sm text-indigo-200">Waterloo CS & mathematics · Runner · Curious about how things work</p>
+          <p className="mt-6 text-sm text-indigo-200">uWaterloo CS & mathematics · curious about everything and anything · recreational athlete</p>
         </div>
         <div className="relative w-48 h-48 md:w-60 md:h-60 mx-auto rounded-full overflow-hidden border-2 border-indigo-300/60 glow-effect order-first md:order-last">
           <Image src={assetPath("/images/headshot.jpg")} alt="Jayden Yu" fill priority sizes="(max-width: 768px) 192px, 240px" className="object-cover" />
