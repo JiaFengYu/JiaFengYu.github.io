@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "fp8-kv-cache-lessons",
+    "title": "What I learned fusing FP8 KV-cache writes",
+    "description": "An outline for a first article on storage dtypes, rounding, and preserving correctness in a fused kernel.",
+    "tags": ["SGLang", "FP8", "Triton"],
+    "status": "draft",
+    "date": null
+  },
+  {
+    "slug": "swiglu-fusion-beyond-the-kernel",
+    "title": "SwiGLU fusion: beyond the kernel",
+    "description": "An outline about activation fusion, scale layouts, and measuring the inference path that actually matters.",
+    "tags": ["SGLang", "CUDA", "Performance"],
+    "status": "draft",
+    "date": null
+  }
+]
