@@ -8,6 +8,7 @@ export interface Project {
   pullRequest?: { number: number; url: string };
   details: { title: string; text: string }[];
   preview?: { src: string; alt: string; caption: string; width: number; height: number };
+  demo?: { href: string; label: string };
   links: { label: string; href: string; download?: boolean }[];
 }
 
@@ -64,13 +65,14 @@ export const projects: Project[] = [
   {
     slug: "orbit-simulator",
     title: "Satellite Orbit Explorer",
+    demo: process.env.NEXT_PUBLIC_ORBIT_API_URL ? { href: "/orbit-explorer/index.html", label: "Open interactive explorer" } : undefined,
     summary: "A Rust SGP4 service with an offline interactive map, reproducible ground tracks, explicit orbital-element provenance, and a cached CelesTrak adapter.",
     category: "Personal project · Tested MVP",
     tags: ["Rust", "SGP4", "Orbital mechanics"],
-    preview: { src: "/images/orbit-track-explorer.png", alt: "Satellite Orbit Explorer showing a predicted ISS ground track and selected position on a world map", caption: "A historical ISS fixture propagated from its July 2020 element epoch. The map displays predictions and their source data, not live satellite telemetry.", width: 1280, height: 1652 },
+    preview: { src: "/images/orbit-track-explorer.png", alt: "Satellite Orbit Explorer showing a predicted ISS ground track and selected position on a world map", caption: "A historical ISS fixture propagated from its July 2020 element epoch. The map displays predictions and their source data, not live satellite telemetry.", width: 1280, height: 1887 },
     details: [
       { title: "From elements to a ground track", text: "The CLI and local API validate TLE input, propagate it with SGP4, convert TEME positions to WGS84 geodetic coordinates, and export JSON or GeoJSON. An offline browser map supports satellite selection, UTC time controls, a sampled-position slider, source metadata, and element-age warnings. Tracks split at the date line." },
-      { title: "Numerical checks", text: "The implementation pins SGP4 2.4.0 with WGS72 gravity constants and AFSPC compatibility mode. Tests compare 668 reference states and expected failures from the Vallado verification dataset, then check coordinate conversion independently. Ten integration tests cover numerical conventions, malformed input, request limits, provenance, provider-cache failures, and API behavior; desktop and mobile browser checks also pass." },
+      { title: "Numerical checks", text: "The implementation pins SGP4 2.4.0 with WGS72 gravity constants and AFSPC compatibility mode. Tests compare 668 reference states and expected failures from the Vallado verification dataset, then check coordinate conversion independently. Thirteen integration tests cover numerical conventions, malformed input, request limits, provenance, provider-cache failures, API behavior, and website access. Desktop and mobile checks also validate a static frontend connected to the separate Rust service." },
       { title: "Measured scope and limits", text: "A warm 181-sample track averaged 0.46 ms over local HTTP on an AMD EPYC 9654 development host, excluding provider downloads. Earth orientation uses an approximate GMST rotation, so this is an exploration tool rather than a navigation service. The provider adapter is tested against a local HTTP server; live CelesTrak access was unavailable during implementation." },
     ],
     links: [

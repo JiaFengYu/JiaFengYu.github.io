@@ -6,6 +6,7 @@ import type { Project } from "../lib/projects";
 export default function ProjectDetails({ project }: { project: Project }) {
   return (
     <div className="space-y-10">
+      {project.demo && <a href={assetPath(project.demo.href)} className="inline-flex items-center gap-3 rounded-xl bg-indigo-500 px-6 py-3 font-semibold text-white transition hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-300">{project.demo.label} <span aria-hidden="true">→</span></a>}
       {project.preview && <figure>
         <a href={assetPath(project.preview.src)} target="_blank" rel="noreferrer">
           <Image src={assetPath(project.preview.src)} alt={project.preview.alt} width={project.preview.width} height={project.preview.height} className="w-full h-auto rounded-2xl border border-indigo-300/20" />

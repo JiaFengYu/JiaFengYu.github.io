@@ -26,6 +26,7 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: '1'
           NEXT_PUBLIC_SITE_URL: https://jiafengyu.github.io
+          NEXT_PUBLIC_ORBIT_API_URL: ${{ vars.ORBIT_API_URL }}
       - run: npm run check:export
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'

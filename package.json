@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/configure-orbit.mjs",
     "build": "next build",
     "postbuild": "node scripts/finalize-export.mjs",
     "typecheck": "tsc --noEmit",

@@ -8,6 +8,9 @@ const posts = JSON.parse(readFileSync("content/posts/index.json", "utf8"));
 const routes = ["", "about", "projects", "gimps", "blog", "projects/sglang-fp8-kv-cache", "projects/sglang-swiglu-fp8", "projects/mersenne-cluster", "projects/orbit-simulator"];
 for (const route of routes) assert.ok(existsSync(path.join(root, route, "index.html")), `Missing route: /${route}`);
 assert.ok(existsSync(path.join(root, ".nojekyll")), "Missing .nojekyll");
+for (const asset of ['index.html', 'app.js', 'api-client.js', 'config.js', 'styles.css', 'basemap.svg']) {
+  assert.ok(existsSync(path.join(root, 'orbit-explorer', asset)), `Missing orbit explorer asset: ${asset}`);
+}
 assert.ok(!existsSync(path.join(root, "blog/_empty/index.html")), "Empty-blog fallback should not be exported");
 for (const post of posts) {
   const file = path.join(root, "blog", post.slug, "index.html");

@@ -59,6 +59,18 @@ The workflow deploys only from the default branch of `JiaFengYu/JiaFengYu.github
 
 ## Configuration
 
+### Interactive satellite explorer
+
+The explorer's browser assets are in `public/orbit-explorer/`. All orbital calculations and GeoJSON generation stay on a separately hosted Rust API. Set the **Actions repository variable** `ORBIT_API_URL` in `JiaFengYu/JiaFengYu.github.io` to the deployed HTTPS backend origin, then rerun the Pages workflow. It passes that URL to `NEXT_PUBLIC_ORBIT_API_URL` during the build. The backend must allow the exact origin `https://jiafengyu.github.io` through `ORBIT_ALLOWED_ORIGINS`.
+
+The project page displays an **Open interactive explorer** button when the variable is set. The hosted page lives at `/orbit-explorer/`; `/orbit-explorer/index.html` also works. Without a configured backend, the button stays hidden and the standalone page shows an unavailable message.
+
+For local development, set `NEXT_PUBLIC_ORBIT_API_URL=http://127.0.0.1:8788`, run `node scripts/configure-orbit.mjs`, and start Next with the same environment variable. Start the Rust server with `--allowed-origin` matching the browser's actual website origin. Forward both website and API ports when using a remote devserver. The same configuration script runs automatically before production builds.
+
+Backend Docker/Render setup, health checks, data freshness, and two-origin browser verification are documented in the `orbit-track` repository's `docs/hosting.md`. The UI copy can be refreshed with that repository's `scripts/export-web.py --output /path/to/website/public/orbit-explorer`. Backend and website deployments remain separate.
+
+### Site content
+
 - Profile and URLs: `lib/site.ts`, `app/page.tsx`, and `app/about/page.tsx`.
 - Contributions and project details: `lib/projects.ts`.
 - Articles: `content/posts/index.json` and the matching `.md` files.
