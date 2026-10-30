@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>Jayden Yu</title>
+  <rect width="48" height="48" rx="11" fill="#201c44"/>
+  <g fill="none" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 16h9v12c0 5-8 5-8 0" stroke="#eef2ff"/>
+    <path d="m26 16 5 8 5-8m-5 8v8" stroke="#c7d2fe"/>
+  </g>
+</svg>

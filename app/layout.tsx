@@ -1,12 +1,18 @@
 import "./globals.css";
 import { ReactNode } from "react";
 import { Navbar, Footer } from "../components";
-import { site } from "../lib/site";
+import { assetPath, site } from "../lib/site";
 
 export const metadata = {
   metadataBase: new URL(`${site.url}/`),
   title: "Jayden Yu | Inference & GPU Kernels",
   description: site.description,
+  icons: {
+    icon: [
+      { url: assetPath("/favicon.ico"), sizes: "16x16 32x32 48x48", type: "image/x-icon" },
+      { url: assetPath("/favicon.svg"), sizes: "any", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
