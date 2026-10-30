@@ -1,11 +1,15 @@
 [
   {
     "slug": "fp8-kv-cache-lessons",
-    "title": "What I learned fusing FP8 KV-cache writes",
-    "description": "An outline for a first article on storage dtypes, rounding, and preserving correctness in a fused kernel.",
-    "tags": ["SGLang", "FP8", "Triton"],
-    "status": "draft",
-    "date": null
+    "title": "SGLang PR#1: Fusing FP8 KV Cache Quantization for Prefill",
+    "titleLink": {
+      "label": "SGLang PR#1",
+      "href": "https://github.com/sgl-project/sglang/pull/40785"
+    },
+    "description": "What I learned combining FP8 KV-cache scaling, conversion, and writes: kernel launches, memory traffic, rounding, and scalar scale handling.",
+    "tags": ["SGLang", "FP8", "KV cache", "Quantization", "LLM inference"],
+    "status": "published",
+    "date": "2026-10-30"
   },
   {
     "slug": "swiglu-fusion-beyond-the-kernel",

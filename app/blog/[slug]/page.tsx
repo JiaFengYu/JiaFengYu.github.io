@@ -32,7 +32,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       <Link href="/blog" className="text-indigo-200 hover:underline">← All writing</Link>
       <header className="my-10">
         <div className="flex flex-wrap items-center gap-3 text-sm text-indigo-200 mb-5">{post.status === "draft" ? <span className="draft-label">Draft outline · local preview</span> : <><time dateTime={post.date!}>{formatPostDate(post.date!)}</time><span>· {post.readingMinutes} min read</span></>}</div>
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">{post.title}</h1>
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">{post.titleLink ? <><a href={post.titleLink.href} className="underline decoration-indigo-300/40 underline-offset-8 hover:decoration-indigo-200">{post.titleLink.label}</a>{post.title.slice(post.titleLink.label.length)}</> : post.title}</h1>
         <p className="text-xl leading-relaxed mb-6">{post.description}</p>
         <div className="flex flex-wrap gap-2">{post.tags.map(tag => <span key={tag} className="topic-tag">{tag}</span>)}</div>
       </header>

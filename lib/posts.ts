@@ -7,6 +7,7 @@ import { assetPath } from "./site";
 export interface Post {
   slug: string;
   title: string;
+  titleLink?: { label: string; href: string };
   description: string;
   tags: string[];
   status: "draft" | "published";
@@ -25,6 +26,9 @@ export function getPosts(): Post[] {
     seen.add(entry.slug);
     if (entry.status !== "draft" && entry.status !== "published") {
       throw new Error(`Invalid article status: ${entry.slug}`);
+    }
+    if (entry.titleLink && (!entry.titleLink.label || !entry.title.startsWith(entry.titleLink.label) || !entry.titleLink.href.startsWith("https://"))) {
+      throw new Error(`Invalid article title link: ${entry.slug}`);
     }
     if (entry.status === "published" && (!entry.date || !/^\d{4}-\d{2}-\d{2}$/.test(entry.date) || Number.isNaN(Date.parse(entry.date)))) {
       throw new Error(`Published articles need a YYYY-MM-DD date: ${entry.slug}`);

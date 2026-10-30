@@ -25,9 +25,11 @@ Then open http://localhost:3001 on your laptop.
 npm run post -- "What I learned about FP8"
 ```
 
-This creates a Markdown file in `content/posts/` and a draft entry in `content/posts/index.json`. Edit the article and its title, description, and tags. The existing two outlines are starting points for the two SGLang contributions; they are not published articles.
+This creates a Markdown file in `content/posts/` and a draft entry in `content/posts/index.json`. Edit the article and its title, description, and tags. The first article is `content/posts/fp8-kv-cache-lessons.md`; edit that file for future updates. The SwiGLU article remains an unpublished outline.
 
 Markdown supports fenced code blocks, tables, images, lists, and links. Use `##` and `###` for sections; the page supplies the title and generates a table of contents. Raw HTML is disabled. Place images in `public/images/blog/` and reference them as `/images/blog/filename.png`.
+
+An optional `titleLink` object in the index can link the beginning of an article title, for example `{"label": "SGLang PR#1", "href": "https://github.com/sgl-project/sglang/pull/40785"}`. Its label must match the beginning of the plain-text `title`. The first article's memory diagram is a static SVG in `public/images/blog/`; Mermaid code fences are not rendered automatically.
 
 Drafts appear only in `npm run dev`. To publish an article, set its `status` to `published` and add a `date` in `YYYY-MM-DD` format in the index. Keep the slug stable once published. Run the production checks before pushing:
 
@@ -40,22 +42,19 @@ The `out/` directory is the deployable site. To preview exactly what GitHub Page
 
 ## Publish to jiafengyu.github.io
 
-GitHub’s account-level Pages address must be served from the **JiaFengYu/JiaFengYu.github.io** repository. Publishing this repository under its current name, `personal-website`, would use `/personal-website/` instead.
+The official repository is **JiaFengYu/JiaFengYu.github.io**, and its deployed branch is **`gh-pages`**. On the devserver, use `/data/users/jaydenyu/JiaFengYu.github.io`.
 
-1. Create the public `JiaFengYu.github.io` repository under the `JiaFengYu` account if it does not already exist. If it exists, inspect its current contents before replacing anything.
-2. Push this source tree, including `.github/workflows/pages.yml`, to that repository’s default branch. For an existing site, use a fresh clone of that repository and replace its site files while keeping `.git/` so its history is preserved. Do not push this unrelated checkout over the existing repository. For an empty Pages repository, add it as another remote:
+After editing an article and passing the production checks, commit its Markdown, index entry, and any images, then push:
 
-   ```bash
-   git remote add pages https://github.com/JiaFengYu/JiaFengYu.github.io.git
-   git push pages main
-   ```
+```bash
+git add content/posts/fp8-kv-cache-lessons.md content/posts/index.json
+git commit -m "Update FP8 KV-cache article"
+git push origin gh-pages
+```
 
-   Commit the website changes first. Do not force-push over an existing site. The commands above assume the empty repository will use `main`.
-3. In that repository, open **Settings → Pages → Build and deployment → Source → GitHub Actions**.
-4. Open **Actions → Deploy GitHub Pages → Run workflow** and select the default branch. Future pushes to the default branch build, check, and deploy automatically. Other branches and pull requests build and check without deploying.
-5. Confirm the workflow succeeds, then open https://jiafengyu.github.io/ and test the article/project links directly.
+Stage any changed image files too. If your update is already committed, only the push is needed. Open **Actions → Deploy GitHub Pages** and wait for the workflow to succeed. The first article will be at https://jiafengyu.github.io/blog/fp8-kv-cache-lessons/.
 
-The workflow deploys only from the default branch of `JiaFengYu/JiaFengYu.github.io` to avoid publishing an unintended copy from the original repository. It supports an existing default branch such as `main` or `master`. It uses GitHub’s Pages token and OIDC permissions; no personal access token is needed in the workflow.
+Pages is configured to use **GitHub Actions**. Pushes to the default branch build, check, and deploy automatically; other branches and pull requests build and check without deploying. The workflow uses GitHub's Pages token and OIDC permissions. Blog updates do not require redeploying the separate Render API.
 
 ## Configuration
 

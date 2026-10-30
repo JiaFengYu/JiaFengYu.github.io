@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="1038" viewBox="0 0 480 1038" role="img" aria-labelledby="title desc">
+<title id="title">GPU memory hierarchy</title>
+<desc id="desc">The article's diagram compares registers, shared memory and L1, L2, HBM, and system RAM.</desc>
+<defs><linearGradient id="panel" x2="0" y2="1"><stop stop-color="#171f38"/><stop offset="1" stop-color="#10182c"/></linearGradient><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a5b4fc"/></marker></defs>
+<rect width="480" height="1038" rx="20" fill="#0b1020"/>
+<rect x="20" y="28" width="440" height="154" rx="14" fill="url(#panel)" stroke="#636f9e" stroke-opacity="0.6"/>
+<text x="44" y="67" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="24" font-weight="700">Registers</text>
+<text x="44" y="101" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">1 cycle</text>
+<text x="44" y="127" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">Immediate access on next tick</text>
+<text x="44" y="153" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">On GPU die</text>
+<path d="M 240 187 V 212" fill="none" stroke="#a5b4fc" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="20" y="222" width="440" height="154" rx="14" fill="url(#panel)" stroke="#636f9e" stroke-opacity="0.6"/>
+<text x="44" y="261" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="24" font-weight="700">Shared / L1 cache</text>
+<text x="44" y="295" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">~20 cycles</text>
+<text x="44" y="321" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">very fast but not instantaneous</text>
+<text x="44" y="347" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">On die</text>
+<path d="M 240 381 V 406" fill="none" stroke="#a5b4fc" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="20" y="416" width="440" height="154" rx="14" fill="url(#panel)" stroke="#636f9e" stroke-opacity="0.6"/>
+<text x="44" y="455" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="24" font-weight="700">L2 cache</text>
+<text x="44" y="489" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">~200 cycles</text>
+<text x="44" y="515" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">Fast</text>
+<text x="44" y="541" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">Still on die</text>
+<path d="M 240 575 V 600" fill="none" stroke="#a5b4fc" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="20" y="610" width="440" height="206" rx="14" fill="url(#panel)" stroke="#636f9e" stroke-opacity="0.6"/>
+<text x="44" y="649" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="24" font-weight="700">HBM</text>
+<text x="44" y="683" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">~400 cycles</text>
+<text x="44" y="709" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">Slow, avoid at all cost</text>
+<text x="44" y="735" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">Off die but still on the GPU</text>
+<text x="44" y="761" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">connected by high bandwidth</text>
+<text x="44" y="787" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">silicon lane</text>
+<path d="M 240 821 V 846" fill="none" stroke="#a5b4fc" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="20" y="856" width="440" height="154" rx="14" fill="url(#panel)" stroke="#636f9e" stroke-opacity="0.6"/>
+<text x="44" y="895" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="24" font-weight="700">System RAM</text>
+<text x="44" y="929" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">~10k cycles</text>
+<text x="44" y="955" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">Doomsday scenario</text>
+<text x="44" y="981" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="20">Not on the GPU at all</text>
+</svg>
