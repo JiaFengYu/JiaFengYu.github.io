@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ReactNode } from "react";
-import { Navbar, Footer } from "../components";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
 import { assetPath, site } from "../lib/site";
 
 export const metadata = {

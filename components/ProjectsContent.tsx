@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectCard } from "./index";
+import ProjectCard from "./ProjectCard";
 import { projects } from "../lib/projects";
 
 const ProjectsContent: React.FC = () => {

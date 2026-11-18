@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, Cpu } from "lucide-react";
-import { ProjectCard } from "../components";
+import ProjectCard from "../components/ProjectCard";
 import { projects } from "../lib/projects";
 import { assetPath, site } from "../lib/site";
 import { getPosts } from "../lib/posts";
