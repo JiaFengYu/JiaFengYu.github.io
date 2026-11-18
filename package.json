@@ -13,8 +13,6 @@
     "preview": "python3 -m http.server 3002 --bind 127.0.0.1 --directory out"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.0.2",
-    "framer-motion": "^12.1.5",
     "image-size": "2.1.0",
     "katex": "^0.19.1",
     "lucide-react": "^0.367.0",

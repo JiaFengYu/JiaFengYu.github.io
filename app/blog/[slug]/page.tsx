@@ -1,21 +1,22 @@
 import Link from "next/link";
 import "katex/dist/katex.min.css";
+import "./article.css";
 import { notFound } from "next/navigation";
-import { getPost, getPosts, formatPostDate } from "../../../lib/posts";
+import { getPost, getPostIndex, formatPostDate } from "../../../lib/posts";
 import { absoluteUrl } from "../../../lib/site";
 import ArticleBody from "../../../components/ArticleBody";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  const posts = getPosts();
+  const posts = getPostIndex();
   // Next 14 requires a candidate even before the first article is published.
   // This unregistered slug resolves to notFound; postbuild omits its artifact.
   return posts.length ? posts.map(({ slug }) => ({ slug })) : [{ slug: "_empty" }];
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = getPost(params.slug);
+  const post = getPostIndex().find(post => post.slug === params.slug);
   if (!post) notFound();
   return {
     title: `${post.title} | Jayden Yu`,

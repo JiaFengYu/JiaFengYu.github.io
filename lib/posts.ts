@@ -6,7 +6,7 @@ import { imageSize } from "image-size";
 import entries from "../content/posts/index.json";
 import { assetPath } from "./site";
 
-export interface Post {
+export interface PostMetadata {
   slug: string;
   title: string;
   titleLink?: { label: string; href: string };
@@ -14,6 +14,9 @@ export interface Post {
   tags: string[];
   status: "draft" | "published";
   date: string | null;
+}
+
+export interface Post extends PostMetadata {
   readingMinutes: number;
 }
 
@@ -32,7 +35,8 @@ function localImageDimensions(src: string) {
   }
 }
 
-export function getPosts(): Post[] {
+// Metadata-only consumers don't need to read or render article bodies.
+export function getPostIndex(): PostMetadata[] {
   const seen = new Set<string>();
   return entries.map(entry => {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug) || seen.has(entry.slug)) {
@@ -48,19 +52,28 @@ export function getPosts(): Post[] {
     if (entry.status === "published" && (!entry.date || !/^\d{4}-\d{2}-\d{2}$/.test(entry.date) || Number.isNaN(Date.parse(entry.date)))) {
       throw new Error(`Published articles need a YYYY-MM-DD date: ${entry.slug}`);
     }
-    return entry;
+    return { ...entry, status: entry.status as PostMetadata["status"] };
   }).filter(entry => entry.status === "published" || process.env.NODE_ENV !== "production")
-    .map(entry => {
-      const source = fs.readFileSync(path.join(directory, `${entry.slug}.md`), "utf8");
-      return { ...entry, status: entry.status as Post["status"], readingMinutes: Math.max(1, Math.ceil(source.split(/\s+/).length / 220)) };
-    })
     .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+}
+
+function estimateReadingMinutes(source: string) {
+  return Math.max(1, Math.ceil(source.split(/\s+/).length / 220));
+}
+
+export function getPosts(): Post[] {
+  return getPostIndex().map(entry => {
+    const source = fs.readFileSync(path.join(directory, `${entry.slug}.md`), "utf8");
+    return { ...entry, readingMinutes: estimateReadingMinutes(source) };
+  });
 }
 
 export function getPost(slug: string) {
   // Resolve only registered, visible posts; never use arbitrary route input as a path.
-  const post = getPosts().find(entry => entry.slug === slug);
-  if (!post) return undefined;
+  const metadata = getPostIndex().find(entry => entry.slug === slug);
+  if (!metadata) return undefined;
+  const source = fs.readFileSync(path.join(directory, `${metadata.slug}.md`), "utf8");
+  const post = { ...metadata, readingMinutes: estimateReadingMinutes(source) };
   const markdown = new MarkdownIt({ html: false, linkify: true, typographer: true });
   const renderImage = markdown.renderer.rules.image!;
   markdown.renderer.rules.image = (tokens, index, options, env, renderer) => {
@@ -80,7 +93,7 @@ export function getPost(slug: string) {
     }
     return renderFence(tokens, index, options, env, renderer);
   };
-  const tokens = markdown.parse(fs.readFileSync(path.join(directory, `${post.slug}.md`), "utf8"), {});
+  const tokens = markdown.parse(source, {});
   // Leading photo paragraphs form an introduction above the table of contents.
   // Leave other articles' prose and inline images in their original body.
   let introEnd = 0;
