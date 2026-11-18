@@ -1,7 +1,9 @@
 import Link from "next/link";
+import "katex/dist/katex.min.css";
 import { notFound } from "next/navigation";
 import { getPost, getPosts, formatPostDate } from "../../../lib/posts";
 import { absoluteUrl } from "../../../lib/site";
+import ArticleBody from "../../../components/ArticleBody";
 
 export const dynamicParams = false;
 
@@ -37,8 +39,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <div className="flex flex-wrap gap-2">{post.tags.map(tag => <span key={tag} className="topic-tag">{tag}</span>)}</div>
       </header>
       {post.status === "draft" && <aside className="draft-notice mb-8">Unpublished outline. This page is available in the local preview only.</aside>}
-      {post.headings.length > 0 && <aside aria-label="In this article" className="surface p-6 mb-10"><h2 className="font-semibold mb-3">In this article</h2><ul className="space-y-2">{post.headings.map(heading => <li key={heading.id} className={heading.level === 3 ? "pl-4" : ""}><a href={`#${heading.id}`} className="text-indigo-200 hover:underline">{heading.title}</a></li>)}</ul></aside>}
-      <div className="article-body" dangerouslySetInnerHTML={{ __html: post.html }} />
+      <ArticleBody html={post.html} introHtml={post.introHtml}>
+        {post.headings.length > 0 && <aside aria-label="In this article" className="surface p-6 mb-10"><h2 className="font-semibold mb-3">In this article</h2><ul className="space-y-2">{post.headings.map(heading => <li key={heading.id} className={heading.level === 4 ? "pl-8" : heading.level === 3 ? "pl-4" : ""}><a href={`#${heading.id}`} className="text-indigo-200 hover:underline">{heading.title}</a></li>)}</ul></aside>}
+      </ArticleBody>
       <div className="border-t border-indigo-300/20 mt-12 pt-8"><Link href="/blog" className="text-indigo-200 hover:underline">← Back to writing</Link></div>
     </article>
   );

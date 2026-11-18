@@ -29,6 +29,8 @@ This creates a Markdown file in `content/posts/` and a draft entry in `content/p
 
 Markdown supports fenced code blocks, tables, images, lists, and links. Use `##` and `###` for sections; the page supplies the title and generates a table of contents. Raw HTML is disabled. Place images in `public/images/blog/` and reference them as `/images/blog/filename.png`.
 
+Use fenced `math` blocks for LaTeX equations; the blog renders them with KaTeX.
+
 An optional `titleLink` object in the index can link the beginning of an article title, for example `{"label": "SGLang PR#1", "href": "https://github.com/sgl-project/sglang/pull/40785"}`. Its label must match the beginning of the plain-text `title`. The first article's memory diagram is a static SVG in `public/images/blog/`; Mermaid code fences are not rendered automatically.
 
 Drafts appear only in `npm run dev`. To publish an article, set its `status` to `published` and add a `date` in `YYYY-MM-DD` format in the index. Keep the slug stable once published. Run the production checks before pushing:

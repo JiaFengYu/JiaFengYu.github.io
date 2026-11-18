@@ -23,7 +23,7 @@ export default function HomePage() {
           <p className="mt-6 text-sm text-indigo-200">uWaterloo CS & mathematics · curious about everything and anything · recreational athlete</p>
         </div>
         <div className="relative w-48 h-48 md:w-60 md:h-60 mx-auto rounded-full overflow-hidden border-2 border-indigo-300/60 glow-effect order-first md:order-last">
-          <Image src={assetPath("/images/headshot.jpg")} alt="Jayden Yu" fill priority sizes="(max-width: 768px) 192px, 240px" className="object-cover" />
+          <Image src={assetPath("/images/headshot.webp")} alt="Jayden Yu" fill priority sizes="(max-width: 768px) 192px, 240px" className="object-cover" />
         </div>
       </section>
       <section aria-labelledby="current-work" className="surface p-6 md:p-10">

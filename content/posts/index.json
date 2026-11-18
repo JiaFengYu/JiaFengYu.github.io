@@ -1,5 +1,13 @@
 [
   {
+    "slug": "sglang-2026-summit",
+    "title": "SGLang Summit 2026 brain dump",
+    "description": "Notes, technical takeaways, and ideas from the first ever SGLang Summit.",
+    "tags": ["SGLang", "LLM inference"],
+    "status": "published",
+    "date": "2026-11-18"
+  },
+  {
     "slug": "fp8-kv-cache-lessons",
     "title": "SGLang PR#1: Fusing FP8 KV Cache Quantization for Prefill",
     "titleLink": {

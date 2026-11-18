@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="md:w-1/3">
           <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-md border border-indigo-300 glow-effect">
             <Image
-              src={assetPath("/images/about-image.jpg")}
+              src={assetPath("/images/about-image.webp")}
               alt="Jayden Yu working on projects"
               fill
               className="object-cover"
