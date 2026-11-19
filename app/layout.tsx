@@ -2,6 +2,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import NightSky from "../components/NightSky";
 import { assetPath, site } from "../lib/site";
 
 export const metadata = {
@@ -21,18 +22,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className="night-sky-bg text-gray-100 min-h-screen flex flex-col relative">
         <a href="#main-content" className="skip-link">Skip to content</a>
-        {/* Space background with stars */}
-        <div className="stars-container fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
-          <div className="stars"></div>
-          <div className="stars2"></div>
-          <div className="stars3"></div>
-          <div className="stars4"></div>
-          <div className="shooting-star" style={{ top: '20%', animationDelay: '0s' }}></div>
-          <div className="shooting-star" style={{ top: '60%', animationDelay: '4s' }}></div>
-          <div className="shooting-star" style={{ top: '80%', animationDelay: '8s' }}></div>
-        </div>
+        <NightSky />
         
-        {/* White navbar with enforced styling */}
+        {/* Main navigation */}
         <div className="relative z-20">
           <Navbar />
         </div>
